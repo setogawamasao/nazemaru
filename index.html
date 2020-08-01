@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>にいまるカメラ</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<!-- フルスクリーン設定 -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+　　<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<link rel = "stylesheet" href = "css/style.css">
+		<script type="module">
+			import {init} from "./js/main/top.js";
+			init();
+		</script>
+	</head>
+	<body bgcolor="black">
+			<div style="text-align:center">
+				<img src = "./img/nimaru.png" style = "width:70%;">
+				<canvas id="myCanvasIndex"></canvas>
+			</div>
+			<div style="text-align:center">
+				<a href="./main.html"><img src="./img/start.png" style="width:50%"></a>
+			</div>
+	</body>
+</html>

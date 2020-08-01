@@ -1,0 +1,51 @@
+
+<html lang="en">
+	<head>
+		<title>にいまるカメラ</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link type="text/css" rel="stylesheet" href="css/style.css">
+		<script type="module">
+			import {SetCameraVision} from "./js/camera/camera.js";
+			SetCameraVision();
+
+			import {init, animate} from "./js/main/main.js";
+			init();
+			//loadModels();
+			animate();
+		</script>
+
+	</head>
+	<body>
+	  <video id="video" autoplay playsinline="true"></video>
+		<canvas id="myCanvas"></canvas>
+
+		<div id="slideL" class="off">
+			<div class="yajirushi" style="text-align:center;height:50px" class="off">
+				<img src = "./img/yajirushiUp.png" style = "width:5%;">
+			</div>
+	    <div class="slide-inner" style="text-align:center;">
+				<img id="positionButton" src = "./img/position.png" style = "width:15%;margin:2.5%;">
+				<img id="postureButton" src = "./img/posture.png" style = "width:15%;margin:2.5%;">
+				<img id="sizeButton" src = "./img/size.png" style = "width:15%;margin:2.5%;">
+				<img id="addButton" src = "./img/add.png" style = "width:15%;margin:2.5%;">
+	    </div>
+		</div>
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+		<script>
+		//クリックで表示
+		$('#slideL .yajirushi').on('click',function(){
+		  if($('#slideL').hasClass('off')){
+		    $('#slideL').removeClass('off');
+		    $('#slideL').animate({'marginBottom':'10%'},300).addClass('on');
+				$('#slideL .yajirushi img').attr('src', './img/yajirushiDown.png');
+		  }else{
+		    $('#slideL').addClass('off');
+		    $('#slideL').animate({'marginBottom':'0px'},300);
+				$('#slideL .yajirushi img').attr('src', './img/yajirushiUp.png');
+		  }
+		});
+		</script>
+	</body>
+</html>
